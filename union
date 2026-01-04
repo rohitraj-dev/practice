@@ -1,0 +1,39 @@
+import java.util.*;
+class union
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int ar[] = {1, 2, 3, 4, 5};
+        int arr[] = {1, 2, 3, 6, 7};
+
+        ArrayList<Integer> union = new ArrayList<>();
+
+        int i = 0;
+        int j = 0;
+
+        while(i < ar.length || j < arr.length)
+        {
+            if(ar[i] == arr[j])
+            {
+                union.add(ar[i]);
+                i++;
+                j++;
+            }
+            else if(i < ar.length)
+            {
+                union.add(ar[i]);
+                i++;
+            }
+            else if(j < arr.length)
+            {
+                union.add(arr[j]);
+            }
+        }
+        for(int ele : union)
+        {
+            System.out.print(ele+" ");
+        }
+    }
+}
